@@ -1,0 +1,7 @@
+model original.mod;
+data barry.dat;
+option solver cplex;
+
+solve;
+display Total_Cost;
+display adm;

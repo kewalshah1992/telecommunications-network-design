@@ -1,0 +1,74 @@
+param adm_cost = 1000000;
+param bbdx_flow_cost = 4;
+param adm_usage_cost = 2;
+param arc_capacity = 48000;
+
+set CYCLES := 
+IPTUJFK
+;
+
+param rings :=
+IPTUJFK    3
+;
+
+param bbdx :=
+F     0
+I     1
+J     1
+K     1
+P     1
+T     0
+U     0
+;
+
+set COMMODITIES :=
+J	P
+J	U
+J	I
+J	K
+F	P
+F	J
+F	I
+F	K
+I	P
+K	P
+I	J
+K	J
+I	F
+K	F
+T   F
+T   I
+T   J
+T   P
+;
+
+param demand :=
+J	  P 	 11000
+J	  U	     9000
+J	  I	     14000
+J	  K	     38000
+F	  P	     2000
+F	  J	     61000
+F	  I   	 19000
+F	  K	     10000
+I	  P	     31000
+K	  P	     13000
+I	  J	     55000
+K	  J	     24000
+I	  F	     1000
+K	  F		 2000
+T     F      2000
+T     I      3000
+T     J      1000
+T     P      30000
+;
+
+param cost_symmetric_raw :=
+J     F			 1.01
+F     K			 1.03
+I     K			 1.05
+I     P			 1.04
+P     T			 1.03
+T     U			 1.02
+U     J			 1.02
+;

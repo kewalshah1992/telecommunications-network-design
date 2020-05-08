@@ -1,0 +1,102 @@
+param adm_cost = 1000000;
+param bbdx_flow_cost = 4;
+param adm_usage_cost = 2;
+param arc_capacity = 48000;
+
+set CYCLES := 
+MEGRCOSQ
+;
+
+param rings :=
+MEGRCOSQ	6
+;
+
+param bbdx :=
+C     0
+E     0
+G     1
+M     1
+O     1
+Q     1
+R     0
+S     0
+;
+
+set COMMODITIES :=
+E	G
+E	R
+E	Q
+E   M
+G	R
+G	O
+G	S
+G	Q
+G	M
+R	S
+C	G
+C	R
+C	O
+C	S
+C	Q
+C	M
+O	R
+O	S
+O	Q
+O	M
+Q	E
+M	E
+Q	G
+M	G
+Q	R
+M	R
+Q	C
+Q	O
+M	O
+Q	S
+M	S
+;
+
+param demand :=
+E	  G	     32000
+E	  R  	 1000
+E	  Q	     13000
+E	  M	     13000
+G	  R	     177000
+G	  O	     118000
+G	  S	     15000
+G	  Q	     32000
+G	  M	     31000
+R	  S	     4000
+C	  G	     14000
+C	  R	     3000
+C	  O	     21000
+C	  S	     3000
+C	  Q	     1000
+C	  M	     1000
+O	  R	     23000
+O	  S	     113000
+O	  Q 	 5000
+O	  M	     4000
+Q	  E	     1000
+M	  E	     1000
+Q	  G	     16000
+M	  G	     16000
+Q	  R	     2000
+M	  R	     2000
+Q	  C	     1000
+Q	  O	     40000
+M	  O	     41000
+Q	  S	     13000
+M	  S    	 12000
+;
+
+param cost_symmetric_raw :=
+M     Q			 1.06
+G     R			 1.01
+R     C			 1.05
+C     O			 1.04
+O     S			 1.04
+S     Q			 1.1
+M     E			 1.06
+E     G			 1.05
+;
